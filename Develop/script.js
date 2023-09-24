@@ -6,8 +6,7 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialKeys = "!@#$%^&*";
 
-
-// Assignment Code
+//generate prompts/alerts and password
 function generatePassword(){
   
   characterLength = parseInt(prompt("Enter a number between 8 to 128 character for the length of your password"));
@@ -17,6 +16,7 @@ function generatePassword(){
     return;
   }
  
+  //alert user to select their included preferences
   else {
      var upperCasePrompt =  confirm("Your password will contain upper case characters. Click cancel if you prefer it not to");
      var lowerCasePrompt =  confirm("Your password will contain lower case characters. Click cancel if you prefer it not to");
@@ -28,6 +28,7 @@ function generatePassword(){
       return;
   }
   
+  //generate characters based on user prompts
   characters = "";
   if (upperCasePrompt) characters += upperCase;
   if (lowerCasePrompt) characters += lowerCase;
@@ -35,6 +36,7 @@ function generatePassword(){
   if (specialKeysPrompt) characters += specialKeys;
 }
 
+//generate password depending on user inputs
 password = "";
 for (var i = 0; i < characterLength; i++) {
 password += getRandomCharacter (characters);
@@ -42,6 +44,7 @@ password += getRandomCharacter (characters);
 return password;
 }
 
+//function to randomly select characters
 function getRandomCharacter(characters) {
   var randomIndex = Math.floor(Math.random() * characters.length);
   return characters[randomIndex];
@@ -50,7 +53,10 @@ function getRandomCharacter(characters) {
 // Write password to the #password input
 function writePassword() {
 
+  //generate new password based on preferences
   var password = generatePassword();
+
+  //clear and reset preferences fields 
   var passwordText = document.querySelector("#password");
       passwordText.value = password;
   }
