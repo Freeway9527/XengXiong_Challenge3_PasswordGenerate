@@ -13,8 +13,10 @@ must meet the requirement, and be given the chance to choose your password lengt
 
 # Screen shot of Password Generator 
 
-![Alt text](Assets/passwordGenerateSS.jpg)
+![Alt text](Assets/image/passwordGenerateSS.jpg)
 
 
 
 # Link to deployed application
+
+https://freeway9527.github.io/XengXiong_Challenge3_PasswordGenerate/
